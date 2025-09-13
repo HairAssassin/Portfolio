@@ -223,9 +223,11 @@ a {
 
 .home-img .img-box .img-item img {
     position: absolute;
-    top: -125px;
+    top: 10%;
+    left: 15%;
+    /*margin: right 100px;*/
     display: block;
-    width: 85%;
+    width: 75%;
     object-fit: cover;
     mix-blend-mode: lighten;
 }
