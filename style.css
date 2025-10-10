@@ -230,6 +230,29 @@ a {
     mix-blend-mode: lighten;
 }
 
+#about-me-pic {
+    position: absolute;
+    top: 29px;
+    right: 5%;
+    display: block;
+    width: 70%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+#about-me-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border-radius: 50%;
+    border: .1px solid #1f242d;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
 .bars-animation {
     position: absolute;
     width: 100%;
