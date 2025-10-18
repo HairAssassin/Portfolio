@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
+/* Global Reset and Styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +11,7 @@ a {
     text-decoration: none;
 }
 
+/* Navbar Styling */
 .navbar {
     position: fixed;
     left: 0;
@@ -42,6 +42,7 @@ a {
 
 .navbar ul {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
 }
 
 .navbar ul li {
@@ -58,9 +59,9 @@ a {
 .navbar ul li:hover a,
 .navbar ul li.active a {
     color: #3dccf0;
-    
 }
 
+/* Home Section */
 .home {
     display: flex;
     align-items: center;
@@ -94,7 +95,6 @@ a {
 }
 
 @keyframes display-text {
-
     25%,
     100% {
         display: none;
@@ -113,7 +113,6 @@ a {
 }
 
 @keyframes fill-text {
-
     10%,
     100% {
         width: 0;
@@ -156,7 +155,7 @@ a {
 
 .home-info .btn-sci .sci {
     margin-left: 20px;
-}    
+}
 
 .home-info .btn-sci .sci a {
     display: inline-flex;
@@ -175,6 +174,7 @@ a {
     box-shadow: 0 0 10px #3dccf0;
 }
 
+/* Image Styling */
 .home-img .img-box {
     position: relative;
     width: 32vw;
@@ -230,49 +230,58 @@ a {
     mix-blend-mode: lighten;
 }
 
-#about-me-pic {
-    position: absolute;
-    top: 29px;
-    right: 5%;
-    display: block;
-    width: 70%;
-    object-fit: cover;
-    mix-blend-mode: lighten;
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    /* Adjust Navbar for Mobile */
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .home {
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 5%;
+    }
+
+    .home-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-info p {
+        font-size: 14px;
+    }
+
+    /* Adjust Image Size for Mobile */
+    .home-img .img-box {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .home-img .img-box .img-item img {
+        width: 100%;
+    }
+
+    /* Hide or adjust other sections like buttons and links as needed */
 }
 
-#about-me-frame {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #1f242d;
-    border-radius: 50%;
-    border: .1px solid #1f242d;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    overflow: hidden;
-}
+/* Further Media Queries for Very Small Devices (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 25px;
+    }
 
-.bars-animation {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    z-index: -1;
-}
-
-.bars-animation .bar {
-    width: 100%;
-    height: 100%;
-    background: #1f242d;
-    transform: translateY(-100%);
-    animation: show-bars .5s ease-in-out forwards;
-    animation-delay: calc(.1s * var(--i));
-}
-
-@keyframes show-bars {
-    100% {
-        transform: translateY(0%);
+    .btn {
+        padding: 8px 20px;
+        font-size: 14px;
     }
 }
-
